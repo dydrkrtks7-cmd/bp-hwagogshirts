@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/3) · hwagogshirts</title>
+  <meta name="description" content="hwagogshirts에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hwagogshirts.com/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fafafa; color: #1d1d1f; line-height: 1.6; }
+ .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+ header { background: #fff; border-bottom: 1px solid #e5e5ea; position: sticky; top: 0; z-index: 100; }
+ .header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+ .logo { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.5px; color: #1d1d1f; text-decoration: none; }
+ nav { display: flex; gap: 24px; }
+ nav a { text-decoration: none; color: #6e6e73; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+ nav a:hover { color: #1d1d1f; }
+ .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
+ .hamburger span { width: 24px; height: 2px; background: #1d1d1f; border-radius: 2px; }
+ .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: #fff; padding: 20px; border-bottom: 1px solid #e5e5ea; z-index: 99; }
+ .mobile-menu a { display: block; padding: 12px 0; color: #1d1d1f; text-decoration: none; font-size: 1rem; border-bottom: 1px solid #f0f0f0; }
+ .hero { padding: 100px 0 80px; text-align: center; background: #fff; }
+ .hero h1 { font-size: 2.8rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+ .hero p { font-size: 1.1rem; color: #6e6e73; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+ .hero-pho { display: none; }
+ .section { padding: 80px 0; }
+ .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 60px; letter-spacing: -0.5px; }
+ .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; margin: 0 auto; }
+ .card { background: #fff; border-radius: 16px; padding: 36px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+ .card h3 { font-size: 1.3rem; margin-bottom: 16px; font-weight: 600; }
+ .card p { color: #6e6e73; font-size: 0.95rem; }
+ .story-block { max-width: 800px; margin: 0 auto; padding: 40px 0; }
+ .story-block h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 24px; }
+ .story-block p { color: #6e6e73; font-size: 1rem; margin-bottom: 20px; line-height: 1.8; }
+ .faq { max-width: 700px; margin: 0 auto; }
+ .faq-item { border-bottom: 1px solid #e5e5ea; padding: 24px 0; }
+ .faq-question { font-weight: 600; font-size: 1.05rem; margin-bottom: 8px; cursor: pointer; }
+ .faq-answer { color: #6e6e73; font-size: 0.95rem; line-height: 1.7; }
+ .cta { text-align: center; padding: 80px 0; background: #fff; }
+ .cta h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; }
+ .cta p { color: #6e6e73; margin-bottom: 32px; font-size: 1.1rem; }
+ .tel-link { display: inline-block; background: #1d1d1f; color: #fff; padding: 16px 48px; border-radius: 40px; text-decoration: none; font-size: 1.2rem; font-weight: 600; transition: background 0.2s; }
+ .tel-link:hover { background: #2d2d2f; }
+ footer { background: #1d1d1f; color: #a1a1a6; padding: 40px 0; text-align: center; font-size: 0.85rem; }
+ @media (max-width: 768px) {
+ nav { display: none; }
+ .hamburger { display: flex; }
+ .mobile-menu.active { display: block; }
+ .hero h1 { font-size: 2rem; }
+ .grid-2 { grid-template-columns: 1fr; gap: 24px; }
+ .section { padding: 60px 0; }
+ .story-block h2 { font-size: 1.5rem; }
+ .cta h2 { font-size: 1.6rem; }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/3) · hwagogshirts">
+  <meta property="og:description" content="hwagogshirts에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hwagogshirts.com/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="header-inner">
+ <a href="/" class="logo">마포셔츠룸</a>
+ <nav>
+ <a href="/">홈</a>
+ <a href="/intro">소개</a>
+ <a href="/review">리뷰</a>
+ <a href="/price">가격</a>
+ <a href="/contact">연락처</a>
+ </nav>
+ <div class="hamburger" onclick="toggleMenu()">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ </div>
+ <div class="mobile-menu" id="mobileMenu">
+ <a href="/">홈</a>
+ <a href="/intro">소개</a>
+ <a href="/review">리뷰</a>
+ <a href="/price">가격</a>
+ <a href="/contact">연락처</a>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 46개 · 1/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-002-16trql6.html">사장님 몰래 계산기 두드린 밤, 마포 럭셔리 셔츠룸의 민낯을 폭로한다</a>
+        <p class="post-item__summary">&quot;이 술 한 병에 마진이 정말 300%일까?&quot; 단골로서 자주 드나들던 홍대입구모 럭셔리 셔츠룸 구석 자리에서, 나는 사장님 몰래 영수증과 메뉴판을 펼쳐놓고 계산기를 두드리기 시작했습니다. 요즘 애들</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-002-1t824if.html">형님이 딱 잘라 말한다: 마포 홍대입구 럭셔리 셔츠룸 리뷰, 그 뒤에 숨겨진 진짜 비용과 위험</a>
+        <p class="post-item__summary">어젯밤 홍대입구 어떤 샵에서 손님이 &quot;여기 시스템이 이상하다&quot;며 테이블을 엎어버린 걸 보고, 나는 옛날 보드게임 카페에서 희귀 에디션 부품 하나 잃어버려서 망한 기억이 확 떠올랐다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-002-vfnb91.html">형님이 딱 잘라 말한다: 마포 홍대입구 럭셔리 셔츠룸 리뷰, 그 유니콘 같은 한 수의 비밀</a>
+        <p class="post-item__summary">&quot;저기 알리에서 3 불 주고 산 플라스틱 뿔이 어떻게 천만 불짜리 명장면이 됐냐고?&quot;</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-10fbiix.html">형님이 말해주지, 마포 홍대 셔츠룸 고르는 척하지 말고 진짜 &amp;#39;룰&amp;#39;이나 읽어라</a>
+        <p class="post-item__summary">요즘 것들은 글룸헤이븐 2 판이 나왔다고 1 판 카드의 미세한 스탯 차이를 외우느라 야단이지만, 정작 내 눈앞에 펼쳐진 마포와 홍대의 셔츠룸 선택지는 그보다 훨씬 더 잔인한 '코너케이스'의 연속이야</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-1su9wqs.html">형님이 딱 잘라 말한다, 마포 셔츠룸 고를 때 그 &amp;#39;빈 페이지&amp;#39;가 결정한다</a>
+        <p class="post-item__summary">요즘 애들은 그냥 &quot;여기 분위기가 좋다&quot;, &quot;저기 술이 싸다&quot; 하면서 셔츠룸을 고르지. 하하, 그 가벼운 판단력이 한심해서 미칠 지경이야. 내가 정보기관에서 기밀 문서의 '누락된 페이지'를 분석하던</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-20ji3o.html">형님이 딱 잘라 말해주지, 홍대입구 그 셔츠룸 &amp;#39;스킵&amp;#39; 성공한 놈들만 아는 프레임 이야기</a>
+        <p class="post-item__summary">night_view, luxury_lounge, hongdae_street, neon_sign, premium_sofa, dim_lighting, cocktail_glass, suit_style, </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-jr4kc.html">형님이 딱 잘라 말해주지, 마포 셔츠룸 가서 쪽팔리지 않는 유일한 법</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-l18elj.html">홍대 셔츠룸 메인 1티어 브랜드를 위한 필수 디테일</a>
+        <p class="post-item__summary">파이트 클럽, 그 영화의 매력은 어디에 있을까? 비록 나에게는 그저 과거의 영광일 뿐이지만, 요즘 것들은 그 장면 하나하나에 담긴 의미를 아직도 이해하지 못하는 것 같다. 파이트 클럽에서 타일러 더</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-ml8xqv.html">형님이 쏜다, 마포 홍대입구 럭셔리 셔츠룸 리뷰: 유니콘 꿈보다 더 잔인한 현실</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-wkiuq0.html">형님이 딱 잘라 말함: 마포 홍대입구 럭셔리 셔츠룸, 그 유니콘 같은 환상을 쫓지 마라</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/case_study-003-yjhz1b.html">형님이 딱 잘라 말한다, 마포 홍대입구 럭셔리 셔츠룸에서 진짜 &amp;#39;럭셔리&amp;#39;를 건지는 법</a>
+        <p class="post-item__summary">옛날엔 데이터 코드만 뒤져도 보스 패턴이 다 보였는데, 요즘 건 그조차도 패치로 막아버리니 답답해서 미치겠어. 마치 마포나 홍대입구 근처에서 '럭셔리 셔츠룸'을 찾는다고 덤볐다가, 간판만 번지르르한</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-161hzo9.html">형님이 딱 잘라 말한다, 마포 홍대입구 럭셔리 셔츠룸 리뷰에서 진짜 &amp;#39;찐&amp;#39;을 가려내는 피 묻은 감정</a>
+        <p class="post-item__summary">요즘 애들이 니들한테 &quot;어디가 더 낫냐&quot;고 물어보면, 대뜸 평점이나 리뷰 수를 들이밀더라. 하, 웃기고 있네. 내가 이 바닥에서 10 년을 굴렀지만, 마포 홍대입구 럭셔리 셔츠룸 리뷰 같은 건 숫자</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-16hwv4t.html">형님이 알려주는 마포 홍대입구 럭셔리 셔츠룸 리뷰, 그 뒤에 숨겨진 &amp;#39;유니콘&amp;#39; 같은 진짜 디테일</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-1ot2qni.html">10 년 차 데이터 마이너가 본 마포 셔츠룸의 숨겨진 가치 패턴</a>
+        <p class="post-item__summary">옛날에 게임 파일 속 숨은 보스 데이터를 캐낼 때처럼, 이 옷들도 코드 같은 구조를 가지고 있다. 사람들은 가격만 보고 판단하지만, 진짜 중요한 건 그 뒤에 숨겨진 스펙이다. 마치 모델명보다 제조 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-1tas566.html">형님이 딱 알려줌: 글룸헤이븐 구판 신판 카드 스탯 뒤틀림과 마포 셔츠룸의 진실</a>
+        <p class="post-item__summary">요즘 애들이 글룸헤이븐 2 판이 나왔다고 1 판 카드를 쓰레기통에 처박는 꼴을 보면 내가 얼마나 화가 치밀어 오르는지 몰라. &quot;밸런스가 조정됐다&quot;는 그 얄팍한 패치 노트만 믿고 덤비는 거야. 하지만</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-1ymvm0p.html">형들 셔츠룸 고를 때 이거 모르면 3년 손해본다</a>
+        <p class="post-item__summary">일본 도쿄게임쇼 2011 시연대에 놓여있던 다크소울 데모 디스크 있잖아. 그거 아직도 네오GAF 포럼에서 가끔 거론되는데, 거기 등장하는 Undead Parish 상층부 구조가 리테일 버전이랑 완전</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-uxdsf3.html">형님이 딱 잘라 말한다: 마포 홍대입구 럭셔리 셔츠룸, 그 미묘한 &amp;#39;공기&amp;#39;의 차이를 아시는가?</a>
+        <p class="post-item__summary">옛날에 글룸헤이븐 1 판 때 '스펠워드' 카드 한 장 때문에 테이블 뒤집은 적 있지? 요즘 애들은 그 미세한 스탯 차이 하나에 목숨 거는 맛을 몰라. 마포랑 홍대입구 셔츠룸도 딱 그래. 겉보기엔 다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-wjfo3b.html">10 년 차 데이터 마이닝 형님이 본 마포 홍대입구 럭셔리 셔츠룸 리뷰의 숨겨진 텍스처와 배선도</a>
+        <p class="post-item__summary">예전엔 게임 파일깊은 곳 (deep inside) 에 숨겨진 미사용 텍스처 하나 찾으면 밤을 새며 분석했어. 그런데 요즘 마포 홍대입구 럭셔리 셔츠룸 리뷰라는 키워드로 검색하면 나오는 글들은 너무 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-005-wx3jmd.html">형님이 딱 잘라 말한다: 마포 홍대입구 럭셔리 셔츠룸 리뷰, 그 뒤에 숨겨진 &amp;#39;컷된 boss&amp;#39;들의 비극과 살아남은 1 티어 샵의 생존 법칙</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/faq-001-13nbs4g.html">셔츠값이 왜 이거지? 마포 홍대 샵 사장 몰래 원가 파는 글</a>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <a class="pager__link" href="posts-3.html">3</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
